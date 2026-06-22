@@ -1,0 +1,17 @@
+{
+  "name": "@runcanon/vitest-config",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Shared Vitest configuration for RunCanon",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "dependencies": {
+    "@vitest/coverage-v8": "^3.0.4"
+  },
+  "peerDependencies": {
+    "vitest": "^3.0.4"
+  }
+}

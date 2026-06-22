@@ -1,0 +1,21 @@
+{
+  "name": "@runcanon/eslint-config",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Shared ESLint configuration for RunCanon",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "dependencies": {
+    "@eslint/js": "^9.19.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-import-x": "^4.6.1",
+    "eslint-plugin-unicorn": "^56.0.1",
+    "typescript-eslint": "^8.22.0"
+  },
+  "peerDependencies": {
+    "eslint": "^9.19.0"
+  }
+}

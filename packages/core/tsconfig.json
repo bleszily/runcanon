@@ -1,0 +1,10 @@
+{
+  "extends": "@runcanon/tsconfig/library",
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "tsBuildInfoFile": "./dist/.tsbuildinfo"
+  },
+  "include": ["./src/**/*", "./src/**/*.test.ts"],
+  "exclude": ["./dist"]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "@runcanon/dashboard",
+  "version": "0.1.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "test": "vitest run",
+    "lint": "eslint src/",
+    "format": "prettier --write src/",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@runcanon/core": "workspace:*",
+    "@runcanon/platform": "workspace:*",
+    "@runcanon/spec": "workspace:*"
+  },
+  "devDependencies": {
+    "@runcanon/eslint-config": "workspace:*",
+    "@runcanon/prettier-config": "workspace:*",
+    "@runcanon/tsconfig": "workspace:*",
+    "@runcanon/vitest-config": "workspace:*",
+    "@sveltejs/adapter-node": "^5.2.12",
+    "@sveltejs/kit": "^2.16.0",
+    "@sveltejs/vite-plugin-svelte": "^5.0.3",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "svelte": "^5.25.0",
+    "svelte-check": "^4.1.5",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.3",
+    "vite": "^6.2.6",
+    "vitest": "^3.0.4"
+  }
+}

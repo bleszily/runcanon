@@ -1,0 +1,40 @@
+{
+  "name": "@runcanon/root",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "RunCanon - portable, self-updating skill management for AI agents",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "format": "turbo run format",
+    "typecheck": "tsc --build",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "publish-packages": "pnpm run build && pnpm run lint && pnpm run test && changeset publish",
+    "version:sync": "node scripts/sync-version.mjs",
+    "version:patch": "node scripts/bump-version.mjs patch",
+    "version:build": "node scripts/bump-version.mjs build",
+    "docker:build": "node scripts/bump-version.mjs build && docker build -t runcanon:latest .",
+    "clean": "turbo run clean && rm -rf node_modules"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.12",
+    "@types/node": "^22.13.0",
+    "knip": "^5.43.6",
+    "publint": "^0.3.2",
+    "turbo": "^2.3.4",
+    "typescript": "^5.7.3"
+  },
+  "packageManager": "pnpm@9.1.0",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "prettier": "@runcanon/prettier-config",
+  "pnpm": {
+    "onlyBuiltDependencies": ["@parcel/watcher", "esbuild"]
+  }
+}

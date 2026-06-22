@@ -1,0 +1,34 @@
+---
+description: Always rebuild and restart the RunCanon demo Docker container after code changes
+alwaysApply: true
+---
+
+# Docker rebuild after code changes
+
+When you modify any application or package code in this repo (TypeScript, Svelte, platform, core, CLI, MCP, Dockerfiles, or demo scripts), you **must** rebuild the demo image and restart the container **before** telling the user the work is done.
+
+Do this automatically — never wait for the user to ask.
+
+## Command
+
+```bash
+bash scripts/demo-docker.sh
+```
+
+Run from the repo root. Allow up to ~2 minutes for the build to finish.
+
+## What this preserves
+
+- Container name: `runcanon-demo`
+- URL: http://127.0.0.1:3000
+- Data volume `runcanon-data` persists across rebuilds
+
+## When to rebuild
+
+- After any code edit that affects dashboard, platform, core, CLI, or MCP behavior
+- After adding or changing API routes, import logic, org admin features, or UI components
+- Do **not** skip rebuild because the change "seems small"
+
+## After rebuild
+
+Briefly confirm in your response that the image was rebuilt and the container restarted (include container name and that http://127.0.0.1:3000 is serving the new code).

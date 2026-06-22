@@ -1,0 +1,17 @@
+{
+  "name": "@runcanon/prettier-config",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Shared Prettier configuration for RunCanon",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "dependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.4.1"
+  },
+  "peerDependencies": {
+    "prettier": "^3.4.2"
+  }
+}

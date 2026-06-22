@@ -1,0 +1,50 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build outputs
+dist/
+build/
+.svelte-kit/
+.astro/
+
+# TypeScript
+*.tsbuildinfo
+
+# Testing
+coverage/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Turborepo
+.turbo/
+
+# Changesets
+.changeset/*.md
+!.changeset/config.json
+!.changeset/README.md
+
+# Misc
+*.pid
+*.seed
+*.pid.lock

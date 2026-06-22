@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Request for Presentation, SkillSmith</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0a0e14;
+    --panel: #11161f;
+    --panel-raised: #151b26;
+    --border: #1f2733;
+    --border-soft: #181f2a;
+    --text: #e8ecf1;
+    --text-muted: #8b96a5;
+    --text-dim: #5b6472;
+    --teal: #5eead4;
+    --teal-dim: #1f3d3a;
+    --amber: #f0b429;
+    --amber-dim: #3a2c10;
+    --coral: #ff8a73;
+    --coral-dim: #3a1f18;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+    --sans: 'Inter', system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+  }
+
+  body {
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(255,255,255,0.035) 1px, transparent 0);
+    background-size: 28px 28px;
+  }
+
+  .page {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* ---------- Masthead ---------- */
+  .masthead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 48px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--mono);
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: -0.02em;
+  }
+
+  .brand .mark {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    background: linear-gradient(160deg, var(--teal), #2dd4bf);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: #06231f;
+    font-weight: 700;
+  }
+
+  .masthead-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--text-dim);
+  }
+
+  .doc-tag {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 11px;
+    color: var(--text-muted);
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    text-align: center;
+    margin-bottom: 18px;
+  }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--teal);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin: 0 0 14px;
+  }
+
+  h1.title {
+    font-family: var(--mono);
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0 0 16px;
+    line-height: 1.15;
+  }
+
+  .title .accent { color: var(--teal); }
+
+  .hero-sub {
+    max-width: 640px;
+    margin: 0 auto 44px;
+    color: var(--text-muted);
+    font-size: 15.5px;
+    line-height: 1.7;
+  }
+
+  /* ---------- Meta panel (mirrors the "Image Generator" form) ---------- */
+  .meta-panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 56px;
+  }
+
+  .meta-panel-head {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 14.5px;
+    margin-bottom: 22px;
+    color: var(--text);
+  }
+
+  .meta-panel-head .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--teal);
+  }
+
+  .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .meta-field {
+    background: var(--panel-raised);
+    border: 1px solid var(--border-soft);
+    border-radius: 10px;
+    padding: 13px 16px;
+  }
+
+  .meta-field .label {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+    margin: 0 0 6px;
+  }
+
+  .meta-field .value {
+    font-size: 14.5px;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .meta-field .value.muted {
+    color: var(--text-muted);
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  .badge {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 5px;
+    background: var(--amber-dim);
+    color: var(--amber);
+    margin-left: 8px;
+    vertical-align: 1px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ---------- Section panels ---------- */
+  .section {
+    margin-bottom: 52px;
+  }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--teal);
+    letter-spacing: 0.1em;
+    margin: 0 0 18px;
+  }
+
+  .section-label::before { content: "["; color: var(--text-dim); }
+  .section-label::after { content: "]"; color: var(--text-dim); }
+
+  .section p {
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: var(--text);
+    margin: 0 0 16px;
+  }
+
+  .section p.muted {
+    color: var(--text-muted);
+  }
+
+  .section a {
+    color: var(--teal);
+    text-decoration: none;
+    border-bottom: 1px solid var(--teal-dim);
+  }
+
+  .section a:hover { border-bottom-color: var(--teal); }
+
+  code.inline {
+    font-family: var(--mono);
+    font-size: 0.92em;
+    background: var(--panel-raised);
+    border: 1px solid var(--border-soft);
+    padding: 1px 6px;
+    border-radius: 5px;
+    color: var(--teal);
+  }
+
+  /* ---------- Stat strip (from the paper) ---------- */
+  .stat-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 0 0 28px;
+  }
+
+  .stat-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+  }
+
+  .stat-card .num {
+    font-family: var(--mono);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--coral);
+    margin: 0 0 4px;
+  }
+
+  .stat-card .num.up { color: var(--teal); }
+
+  .stat-card .label {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  /* ---------- Diff rows (signature element) ---------- */
+  .diff-block {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+
+  .diff-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--border-soft);
+  }
+
+  .diff-row:last-child { border-bottom: none; }
+
+  .diff-cell {
+    padding: 18px 20px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .diff-cell.minus {
+    background: var(--coral-dim);
+    border-right: 1px solid var(--border-soft);
+    color: #ffc9bb;
+  }
+
+  .diff-cell.plus {
+    background: var(--teal-dim);
+    color: #b7f5e8;
+  }
+
+  .diff-marker {
+    font-family: var(--mono);
+    font-weight: 700;
+    margin-right: 8px;
+  }
+
+  .diff-cell.minus .diff-marker { color: var(--coral); }
+  .diff-cell.plus .diff-marker { color: var(--teal); }
+
+  .diff-headrow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .diff-headrow div {
+    padding: 11px 20px;
+    color: var(--text-dim);
+  }
+
+  .diff-headrow .h-minus { border-right: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); }
+  .diff-headrow .h-plus { border-bottom: 1px solid var(--border-soft); }
+
+  /* ---------- Architecture pills ---------- */
+  .pkg-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin: 18px 0 0;
+  }
+
+  .pkg {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    background: var(--panel-raised);
+    border: 1px solid var(--border-soft);
+    color: var(--text);
+    padding: 7px 12px;
+    border-radius: 8px;
+  }
+
+  .pkg .ns { color: var(--text-dim); }
+  .pkg .nm { color: var(--teal); }
+
+  /* ---------- Agenda list ---------- */
+  .agenda {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .agenda li {
+    display: flex;
+    gap: 14px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border-soft);
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--text);
+  }
+
+  .agenda li:last-child { border-bottom: none; }
+
+  .agenda .idx {
+    font-family: var(--mono);
+    color: var(--text-dim);
+    font-size: 13px;
+    min-width: 20px;
+    padding-top: 1px;
+  }
+
+  /* ---------- Ask panel ---------- */
+  .ask-panel {
+    background: var(--panel);
+    border: 1px solid var(--amber-dim);
+    border-radius: 14px;
+    padding: 28px;
+    position: relative;
+  }
+
+  .ask-panel::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    border-radius: 14px 14px 0 0;
+    background: var(--amber);
+  }
+
+  .ask-panel p {
+    font-size: 15.5px;
+    line-height: 1.75;
+    margin: 0 0 16px;
+  }
+
+  .ask-panel p:last-child { margin-bottom: 0; }
+
+  /* ---------- Footer / sign-off ---------- */
+  .signoff {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    font-family: var(--mono);
+    font-size: 13.5px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .signoff .name {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  @media (max-width: 600px) {
+    h1.title { font-size: 27px; }
+    .meta-grid { grid-template-columns: 1fr; }
+    .stat-strip { grid-template-columns: 1fr; }
+    .diff-row, .diff-headrow { grid-template-columns: 1fr; }
+    .diff-cell.minus, .diff-headrow .h-minus { border-right: none; }
+    .signoff { flex-direction: column; align-items: flex-start; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <div class="brand">
+      <div class="mark">S</div>
+      SkillSmith
+    </div>
+    <div class="masthead-right">
+      <span class="doc-tag">show &amp; tell request</span>
+    </div>
+  </div>
+
+  <div class="hero">
+    <p class="eyebrow">request for presentation</p>
+    <h1 class="title">Show &amp; Tell: <span class="accent">SkillSmith</span></h1>
+    <p class="hero-sub">A portable, self-updating skill management system that observes how teams work with AI agents, discovers reusable workflows, and exports maintainable skill artifacts to Claude, Cursor, Copilot, and beyond.</p>
+  </div>
+
+  <div class="meta-panel">
+    <div class="meta-panel-head"><span class="dot"></span> Request details</div>
+    <div class="meta-grid">
+      <div class="meta-field">
+        <p class="label">Presenter</p>
+        <p class="value">Blessed Uyo</p>
+      </div>
+      <div class="meta-field">
+        <p class="label">Project<span class="badge">working title</span></p>
+        <p class="value">SkillSmith</p>
+      </div>
+      <div class="meta-field">
+        <p class="label">Requested slot</p>
+        <p class="value muted">TBD, next available date</p>
+      </div>
+      <div class="meta-field">
+        <p class="label">Time needed</p>
+        <p class="value">20-30 min, demo + Q&amp;A</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-label">summary</p>
+    <p>I'd like to request a slot at the next Show and Tell to present <strong>SkillSmith</strong>, a portable, self-updating skill management system that observes how teams actually work with AI agents, discovers reusable workflows, and generates maintainable skill artifacts for Claude, Cursor, GitHub Copilot, and other harnesses.</p>
+    <p>The core idea: mine real, structured agent interaction data, language plus ordered tool and prompt sequences, rather than raw UI actions. Score discovered workflows by outcome (success, approval, error rate) rather than a synthetic reward signal. Produce human-readable, version-controllable skill specs that stay under human review by default. Because the system is harness-agnostic, the same mined skill can be exported as a Claude Code skill file, a Cursor rule, a Copilot instruction file, or future formats as they emerge.</p>
+  </div>
+
+  <div class="section">
+    <p class="section-label">why now</p>
+    <p>The inspiration came from a recent paper, <em>Automating SKILL.md Generation for Computer-Using Agents via Interaction Trajectory Mining</em> (Hao &amp; Li, 2026, <a href="https://arxiv.org/pdf/2606.20363" target="_blank" rel="noopener">arxiv.org/pdf/2606.20363</a>). The paper mines GUI trajectories into clustered skills and tries to train a policy from them, and is refreshingly honest about where it falls short.</p>
+
+    <div class="stat-strip">
+      <div class="stat-card">
+        <p class="num up">5 / 8</p>
+        <p class="label">mined clusters reach ≥0.95 purity against ground-truth labels on the source benchmark</p>
+      </div>
+      <div class="stat-card">
+        <p class="num">18.5% → 20.5%</p>
+        <p class="label">GRPO-trained skill-step accuracy gain, barely above zero-shot</p>
+      </div>
+      <div class="stat-card">
+        <p class="num">beaten</p>
+        <p class="label">a trivial frequency baseline consistently outperforms the trained policy</p>
+      </div>
+    </div>
+
+    <p>That negative result is what made this worth pursuing. The paper's failure mode comes from mining raw, unordered GUI clicks and trying to learn an autonomous policy from a synthetic reward model. SkillSmith is a different bet on the same underlying question, and it sidesteps the specific weaknesses the paper surfaces.</p>
+  </div>
+
+  <div class="section">
+    <p class="section-label">where skillsmith diverges</p>
+
+    <div class="diff-block">
+      <div class="diff-headrow">
+        <div class="h-minus">the paper's limitation</div>
+        <div class="h-plus">skillsmith's approach</div>
+      </div>
+
+      <div class="diff-row">
+        <div class="diff-cell minus"><span class="diff-marker">−</span>Mines raw, unordered GUI clicks, a bag-of-actions representation that discards sequence</div>
+        <div class="diff-cell plus"><span class="diff-marker">+</span>Mines language plus ordered tool and prompt sequences, preserving structure from the start</div>
+      </div>
+
+      <div class="diff-row">
+        <div class="diff-cell minus"><span class="diff-marker">−</span>Trains against a learned, offline reward model that can be gamed or simply uninformative</div>
+        <div class="diff-cell plus"><span class="diff-marker">+</span>Scores by real outcomes: success, human approval, error rate</div>
+      </div>
+
+      <div class="diff-row">
+        <div class="diff-cell minus"><span class="diff-marker">−</span>Outputs an opaque, black-box policy that's hard to inspect or correct</div>
+        <div class="diff-cell plus"><span class="diff-marker">+</span>Outputs human-readable, version-controllable skill specs</div>
+      </div>
+
+      <div class="diff-row">
+        <div class="diff-cell minus"><span class="diff-marker">−</span>Closing argument: generated artifacts should stay reviewable before deployment</div>
+        <div class="diff-cell plus"><span class="diff-marker">+</span>Human approval gate on by default; autonomy is opt-in</div>
+      </div>
+
+      <div class="diff-row">
+        <div class="diff-cell minus"><span class="diff-marker">−</span>Source-domain clusters fail to generalize beyond the original benchmark</div>
+        <div class="diff-cell plus"><span class="diff-marker">+</span>Harness-agnostic by design, a skill isn't locked to one tool or benchmark</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-label">what i'd cover</p>
+    <ul class="agenda">
+      <li><span class="idx">01</span>A short walkthrough of the paper's setup and its central negative finding, as framing for why naive trajectory mining isn't enough</li>
+      <li><span class="idx">02</span>The product architecture: the monorepo packages and per-harness export packages</li>
+      <li><span class="idx">03</span>A live look at the current state of the project, with a demo of skill mining and export if it's far enough along by the session date</li>
+      <li><span class="idx">04</span>Open questions and where I'd value feedback, particularly around scoring/lifecycle decisions and harness export fidelity</li>
+    </ul>
+
+    <div class="pkg-row">
+      <span class="pkg"><span class="ns">@skillsmith/</span><span class="nm">core</span></span>
+      <span class="pkg"><span class="ns">@skillsmith/</span><span class="nm">spec</span></span>
+      <span class="pkg"><span class="ns">@skillsmith/</span><span class="nm">cli</span></span>
+      <span class="pkg"><span class="ns">@skillsmith/</span><span class="nm">mcp</span></span>
+      <span class="pkg"><span class="ns">@skillsmith/</span><span class="nm">dashboard</span></span>
+      <span class="pkg"><span class="ns">@skillsmith/</span><span class="nm">harness-claude</span></span>
+      <span class="pkg"><span class="ns">@skillsmith/</span><span class="nm">harness-cursor</span></span>
+      <span class="pkg"><span class="ns">@skillsmith/</span><span class="nm">harness-copilot</span></span>
+      <span class="pkg"><span class="ns">@skillsmith/</span><span class="nm">harness-openai</span></span>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-label">ask</p>
+    <div class="ask-panel">
+      <p>Could you let me know the next available slot and any format constraints (slide deck, live demo setup, recording policy) I should prepare for? Happy to adjust the scope or length based on what fits the schedule.</p>
+    </div>
+  </div>
+
+  <div class="signoff">
+    <span>Thanks, <span class="name">Blessed</span></span>
+    <span>skillsmith · request for presentation</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "1.0.0",
+  "version": "0.1.0",
+  "releasedAt": "2026-06-21T14:44:23.292Z",
+  "minNode": "20.0.0",
+  "requiresNode": true,
+  "checksumsFile": "/downloads/v0.1.0/SHA256SUMS",
+  "checksumsSha256": "e4a7be634321942cb3e662588adb19c8a861654dde860f288b085b85d44fb142",
+  "artifacts": [
+    {
+      "id": "darwin-arm64",
+      "file": "runcanon-0.1.0-darwin-arm64.tar.gz",
+      "sha256": "c94cbc22e32493e88bd5e1aa0f2e7c4d5ad23fa758a58ae21c58df2e381d81e6",
+      "url": "/downloads/v0.1.0/runcanon-0.1.0-darwin-arm64.tar.gz",
+      "kind": "tar.gz"
+    },
+    {
+      "id": "darwin-x64",
+      "file": "runcanon-0.1.0-darwin-x64.tar.gz",
+      "sha256": "f4be1e5c5392ac5732ddebdc40debf3168f5e9e96645ddf10b9276af70717aa8",
+      "url": "/downloads/v0.1.0/runcanon-0.1.0-darwin-x64.tar.gz",
+      "kind": "tar.gz"
+    },
+    {
+      "id": "linux-x64",
+      "file": "runcanon-0.1.0-linux-x64.tar.gz",
+      "sha256": "10a310dbceecec7d2e85e0f96e99a4e6b5f44c09953b293b86c01699d794eb57",
+      "url": "/downloads/v0.1.0/runcanon-0.1.0-linux-x64.tar.gz",
+      "kind": "tar.gz"
+    },
+    {
+      "id": "win-x64",
+      "file": "runcanon-0.1.0-win-x64.zip",
+      "sha256": "32c5a7ab24dede76a1474f5440790db650564c2c2ccc8119a9f90099e1404a0c",
+      "url": "/downloads/v0.1.0/runcanon-0.1.0-win-x64.zip",
+      "kind": "zip"
+    }
+  ],
+  "install": {
+    "unix": "/api/releases/install.sh",
+    "windows": "/api/releases/install.ps1"
+  },
+  "notes": "Verify SHA256 before install. Code-signed native binaries ship when RUNCANON_CLI_SIGN=1 in CI."
+}

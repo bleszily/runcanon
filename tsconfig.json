@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "skipLibCheck": true,
+    "composite": true,
+    "declaration": false,
+    "noEmit": true
+  },
+  "include": [],
+  "references": [
+    { "path": "./packages/spec" },
+    { "path": "./packages/core" },
+    { "path": "./packages/cli" },
+    { "path": "./packages/telemetry" },
+    { "path": "./packages/mcp" },
+    { "path": "./packages/harness-claude" },
+    { "path": "./packages/harness-cursor" },
+    { "path": "./packages/harness-copilot" },
+    { "path": "./apps/dashboard" },
+    { "path": "./apps/docs" }
+  ]
+}
