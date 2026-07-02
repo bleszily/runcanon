@@ -27,7 +27,7 @@
     "clean": "rm -rf dist/"
   },
   "dependencies": {
-    "js-yaml": "^4.1.0",
+    "js-yaml": "^4.2.0",
     "zod": "^3.24.1"
   },
   "devDependencies": {
