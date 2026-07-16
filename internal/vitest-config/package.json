@@ -9,9 +9,9 @@
     ".": "./src/index.js"
   },
   "dependencies": {
-    "@vitest/coverage-v8": "^3.0.4"
+    "@vitest/coverage-v8": "^3.2.7"
   },
   "peerDependencies": {
-    "vitest": "^3.0.4"
+    "vitest": "^3.2.6"
   }
 }
