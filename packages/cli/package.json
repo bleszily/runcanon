@@ -33,7 +33,7 @@
     "@runcanon/core": "workspace:*",
     "@runcanon/spec": "workspace:*",
     "commander": "^13.1.0",
-    "undici": "^7.16.0"
+    "undici": "^7.29.1"
   },
   "devDependencies": {
     "@runcanon/eslint-config": "workspace:*",
